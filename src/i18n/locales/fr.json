@@ -1,0 +1,135 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "login": "Connexion"
+  },
+  "welcome": {
+    "title": "Votre prochain coach fitness",
+    "subtitle": "Découvrez la nouvelle expérience de coaching fitness en ligne adaptée à vos objectifs, contraintes, et envies",
+    "cta": "Essayer maintenant"
+  },
+  "about": {
+    "title": "À propos de NextFit Coach",
+    "subtitle": "Votre parcours fitness personnalisé commence ici. Nous combinons technologie de pointe et méthodes d'entraînement éprouvées pour créer le programme parfait pour vous.",
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Rendre le coaching fitness professionnel accessible à tous, partout et à tout moment. Nous croyons en des approches personnalisées qui s'adaptent à vos besoins et objectifs uniques."
+    },
+    "why": {
+      "title": "Pourquoi Nous Choisir",
+      "description": "Notre plateforme alimentée par l'IA crée des programmes d'entraînement personnalisés qui évoluent avec vous. Obtenez les avantages d'un coach personnel avec la commodité d'une application mobile."
+    }
+  },
+  "gender": {
+    "title": "Quelle est votre genre ?",
+    "male": "Je suis un homme",
+    "female": "Je suis une femme"
+  },
+  "age": {
+    "title": "Quel âge avez-vous ?",
+    "under20": "Moins de 20 ans",
+    "20to29": "20 - 29 ans",
+    "30to39": "30 - 39 ans",
+    "40plus": "40 ans et plus"
+  },
+  "physical": {
+    "title": "Entrez vos attributs physiques",
+    "height": "Taille",
+    "weight": "Poids",
+    "heightPlaceholder": "180",
+    "weightPlaceholder": "75",
+    "cm": "cm",
+    "kg": "kg"
+  },
+  "trainingDays": {
+    "title": "Quels jours souhaitez-vous vous entraîner ?"
+  },
+  "days": {
+    "lundi": "Lundi",
+    "mardi": "Mardi",
+    "mercredi": "Mercredi",
+    "jeudi": "Jeudi",
+    "vendredi": "Vendredi",
+    "samedi": "Samedi",
+    "dimanche": "Dimanche",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche"
+  },
+  "preferences": {
+    "title": "Vos préférences et objectifs",
+    "levelLabel": "Votre relation avec le sport",
+    "levelPlaceholder": "Sélectionnez votre niveau",
+    "objectiveLabel": "Votre objectif principal",
+    "objectivePlaceholder": "Sélectionnez votre objectif",
+    "motivationLabel": "Votre motivation principale",
+    "motivationPlaceholder": "Sélectionnez votre motivation",
+    "levels": {
+      "beginner": "Débutant",
+      "amateur": "Amateur",
+      "enthusiast": "Passionné",
+      "expert": "Expert"
+    },
+    "objectives": {
+      "weightLoss": "Perdre du poids",
+      "muscleGain": "Prendre du muscle",
+      "stayFit": "Rester en forme",
+      "performance": "Améliorer mes performances"
+    },
+    "motivations": {
+      "health": "Santé",
+      "aesthetic": "Esthétique",
+      "stress": "Gestion du stress",
+      "competition": "Compétition"
+    }
+  },
+  "review": {
+    "title": "Vérifiez vos informations",
+    "summary": "Récapitulatif",
+    "profile": "Profil",
+    "measurements": "Mensurations",
+    "trainingDays": "Jours d'entraînement",
+    "preferences": "Niveau et objectifs",
+    "motivation": "Motivation",
+    "generatePlan": "Générer mon programme"
+  },
+  "weeklyPlan": {
+    "title": "Votre programme hebdomadaire",
+    "generating": "Génération de votre programme personnalisé...",
+    "sets": "séries",
+    "reps": "répétitions",
+    "rest": "repos",
+    "download": "Télécharger le PDF",
+    "downloading": "Téléchargement...",
+    "tableHeaders": {
+      "exercise": "Exercice",
+      "sets": "Séries",
+      "reps": "Répétitions",
+      "rest": "Repos",
+      "advice": "Conseil"
+    }
+  },
+  "login": {
+    "title": "Bienvenue",
+    "subtitle": "Connectez-vous à votre compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signIn": "Se connecter",
+    "noAccount": "Pas encore de compte ?",
+    "signUp": "S'inscrire"
+  },
+  "common": {
+    "continue": "Continuer",
+    "back": "Retour",
+    "edit": "Modifier",
+    "save": "Enregistrer",
+    "step": "Étape"
+  }
+}

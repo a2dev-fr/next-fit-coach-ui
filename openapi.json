@@ -1,0 +1,232 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "FastAPI",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/create-week-plan": {
+            "post": {
+                "summary": "Create Week Plan",
+                "operationId": "create_week_plan_create_week_plan_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateWeekPlanRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateWeekPlanResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CreateWeekPlanRequest": {
+                "properties": {
+                    "gender": {
+                        "type": "string",
+                        "title": "Gender"
+                    },
+                    "age": {
+                        "type": "integer",
+                        "title": "Age"
+                    },
+                    "height": {
+                        "type": "integer",
+                        "title": "Height"
+                    },
+                    "weight": {
+                        "type": "integer",
+                        "title": "Weight"
+                    },
+                    "training_days": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "Training Days"
+                    },
+                    "sport_relationship": {
+                        "type": "string",
+                        "title": "Sport Relationship"
+                    },
+                    "main_objective": {
+                        "type": "string",
+                        "title": "Main Objective"
+                    },
+                    "main_motivation": {
+                        "type": "string",
+                        "title": "Main Motivation"
+                    },
+                    "training_preference": {
+                        "type": "string",
+                        "title": "Training Preference"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "gender",
+                    "age",
+                    "height",
+                    "training_days",
+                    "sport_relationship",
+                    "main_objective",
+                    "main_motivation",
+                    "training_preference"
+                ],
+                "title": "CreateWeekPlanRequest"
+            },
+            "CreateWeekPlanResponse": {
+                "properties": {
+                    "days": {
+                        "items": {
+                            "$ref": "#/components/schemas/Day"
+                        },
+                        "type": "array",
+                        "title": "Days"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "days"
+                ],
+                "title": "CreateWeekPlanResponse"
+            },
+            "Day": {
+                "properties": {
+                    "day": {
+                        "type": "string",
+                        "title": "Day"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "exercises": {
+                        "items": {
+                            "$ref": "#/components/schemas/Exercise"
+                        },
+                        "type": "array",
+                        "title": "Exercises"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "day",
+                    "name",
+                    "exercises"
+                ],
+                "title": "Day"
+            },
+            "Exercise": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "reps": {
+                        "type": "integer",
+                        "title": "Reps"
+                    },
+                    "sets": {
+                        "type": "integer",
+                        "title": "Sets"
+                    },
+                    "order": {
+                        "type": "integer",
+                        "title": "Order"
+                    },
+                    "rest_between_series": {
+                        "type": "string",
+                        "title": "Rest Between Series"
+                    },
+                    "advice": {
+                        "type": "string",
+                        "title": "Advice"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name",
+                    "reps",
+                    "sets",
+                    "order",
+                    "rest_between_series",
+                    "advice"
+                ],
+                "title": "Exercise"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            }
+        }
+    }
+}

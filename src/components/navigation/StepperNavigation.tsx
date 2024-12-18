@@ -24,13 +24,13 @@ export default function StepperNavigation({
   return (
     <div className={className}>
       {/* Progress Bar */}
-      <div className="w-full mb-8">
+      <div className="w-full mb-4 sm:mb-8">
         <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
       </div>
 
       {/* Back Button - Only show if not first step */}
       {showBack && currentStep > 1 && (
-        <div className="fixed bottom-4 left-4 z-10">
+        <div className="fixed bottom-4 left-3 sm:left-4 z-10">
           <Button
             variant="light"
             isIconOnly

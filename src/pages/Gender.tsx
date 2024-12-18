@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@nextui-org/react';
-import { User2, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
 import { useFitnessStore } from '../store/fitnessStore';
@@ -26,20 +25,24 @@ export default function Gender() {
           fullWidth
           size="lg"
           variant="flat"
-          className="h-20"
-          onClick={() => handleGenderSelect('Homme')}
+          className="h-20 group"
+          onClick={() => handleGenderSelect('male')}
         >
-          <User2 className="w-6 h-6 mr-2" />
+          <span className="text-2xl mr-3 transition-transform group-hover:scale-110" aria-hidden="true">
+            ♂
+          </span>
           {t('gender.male')}
         </Button>
         <Button
           fullWidth
           size="lg"
           variant="flat"
-          className="h-20"
-          onClick={() => handleGenderSelect('Femme')}
+          className="h-20 group"
+          onClick={() => handleGenderSelect('female')}
         >
-          <Users className="w-6 h-6 mr-2" />
+          <span className="text-2xl mr-3 transition-transform group-hover:scale-110" aria-hidden="true">
+            ♀
+          </span>
           {t('gender.female')}
         </Button>
       </div>

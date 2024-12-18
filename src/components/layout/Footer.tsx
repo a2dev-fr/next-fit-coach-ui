@@ -31,6 +31,14 @@ export default function Footer() {
               </svg>
             </Link>
           </div>
+          <div className="flex items-center gap-4 text-sm text-gray-400">
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
           <div className="text-sm text-gray-400">
             © {new Date().getFullYear()} NextFit Coach. All rights reserved.
           </div>

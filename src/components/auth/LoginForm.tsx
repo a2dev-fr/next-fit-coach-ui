@@ -1,122 +1,105 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Input, Checkbox, Card, CardBody } from '@nextui-org/react';
-import { Mail, Lock, Loader } from 'lucide-react';
+import { Button, Divider } from '@nextui-org/react';
 import { useTranslation } from 'react-i18next';
+import EmailInput from './form/EmailInput';
+import PasswordInput from './form/PasswordInput';
+import SocialLoginButtons from './SocialLoginButtons';
 import { useAuth } from '../../hooks/useAuth';
-import { validateEmail } from '../../utils/validation';
 
 export default function LoginForm() {
   const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [remember, setRemember] = useState(false);
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  
-  const { login, loading, error } = useAuth();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Reset errors
-    setEmailError('');
-    setPasswordError('');
-
-    // Validate inputs
-    let isValid = true;
-
-    if (!validateEmail(email)) {
-      setEmailError('Please enter a valid email address');
-      isValid = false;
-    }
-
-    if (password.length < 8) {
-      setPasswordError('Password must be at least 8 characters');
-      isValid = false;
-    }
-
-    if (isValid) {
-      await login(email, password, remember);
-    }
-  };
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    remember,
+    setRemember,
+    isVisible,
+    toggleVisibility,
+    emailError,
+    passwordError,
+    loading,
+    error,
+    handleSubmit
+  } = useAuth();
 
   return (
-    <Card className="max-w-md w-full">
-      <CardBody className="p-6">
-        <div className="space-y-6">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold">{t('login.title')}</h1>
-            <p className="text-sm text-gray-400 mt-2">
-              {t('login.subtitle')}
-            </p>
-          </div>
+    <div className="w-full max-w-md mx-auto p-4 sm:p-6 bg-background/60 backdrop-blur-lg rounded-2xl shadow-lg space-y-6">
+      <div className="text-center space-y-2">
+        <h1 className="text-2xl font-bold">{t('auth.login.title')}</h1>
+        <p className="text-sm text-gray-400">
+          {t('auth.login.subtitle')}
+        </p>
+      </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              type="email"
-              label={t('login.email')}
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              errorMessage={emailError}
-              startContent={<Mail className="w-4 h-4 text-gray-400" />}
-              isInvalid={!!emailError}
-            />
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <EmailInput
+          value={email}
+          onChange={setEmail}
+          error={emailError}
+          label={t('auth.login.email')}
+        />
 
-            <Input
-              type="password"
-              label={t('login.password')}
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              errorMessage={passwordError}
-              startContent={<Lock className="w-4 h-4 text-gray-400" />}
-              isInvalid={!!passwordError}
-            />
+        <div className="space-y-2">
+          <PasswordInput
+            value={password}
+            onChange={setPassword}
+            error={passwordError}
+            visible={isVisible}
+            onVisibilityChange={toggleVisibility}
+            label={t('auth.login.password')}
+          />
 
-            <div className="flex items-center justify-between">
-              <Checkbox
+          <div className="flex items-center justify-between text-sm">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
                 checked={remember}
                 onChange={(e) => setRemember(e.target.checked)}
-              >
-                {t('login.rememberMe')}
-              </Checkbox>
-              <Link
-                to="/forgot-password"
-                className="text-sm text-primary hover:underline"
-              >
-                {t('login.forgotPassword')}
-              </Link>
-            </div>
-
-            {error && (
-              <p className="text-danger text-sm text-center">{error}</p>
-            )}
-
-            <Button
-              type="submit"
-              color="primary"
-              fullWidth
-              size="lg"
-              disabled={loading}
+                className="rounded border-gray-400 text-primary focus:ring-primary"
+              />
+              <span>{t('auth.login.rememberMe')}</span>
+            </label>
+            <Link
+              to="/forgot-password"
+              className="text-primary hover:underline"
             >
-              {loading ? (
-                <Loader className="w-4 h-4 animate-spin" />
-              ) : (
-                t('login.signIn')
-              )}
-            </Button>
-          </form>
-
-          <p className="text-center text-sm">
-            {t('login.noAccount')}{' '}
-            <Link to="/signup" className="text-primary hover:underline">
-              {t('login.signUp')}
+              {t('auth.login.forgotPassword')}
             </Link>
-          </p>
+          </div>
         </div>
-      </CardBody>
-    </Card>
+
+        {error && (
+          <p className="text-danger text-sm text-center">{error}</p>
+        )}
+
+        <Button
+          type="submit"
+          color="primary"
+          fullWidth
+          size="lg"
+          isLoading={loading}
+        >
+          {t('auth.login.signIn')}
+        </Button>
+      </form>
+
+      <div className="relative">
+        <Divider className="my-4" />
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-2 text-gray-400 text-sm">
+          {t('auth.signup.or')}
+        </span>
+      </div>
+
+      <SocialLoginButtons />
+
+      <p className="text-center text-sm">
+        {t('auth.login.noAccount')}{' '}
+        <Link to="/signup" className="text-primary hover:underline">
+          {t('auth.login.signUp')}
+        </Link>
+      </p>
+    </div>
   );
 }

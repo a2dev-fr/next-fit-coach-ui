@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Chip } from '@nextui-org/react';
+import { Button } from '@nextui-org/react';
 import { useTranslation } from 'react-i18next';
 import PageContainer from '../components/PageContainer';
+import DayGrid from '../components/training/DayGrid';
+import { useTrainingDays } from '../hooks/useTrainingDays';
 import { useFitnessStore } from '../store/fitnessStore';
 
 export default function TrainingDays() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { setTrainingDays } = useFitnessStore();
-  const [selectedDays, setSelectedDays] = useState<string[]>([]);
+  const { selectedDays, toggleDay } = useTrainingDays();
   
   const days = [
     { key: 'monday', label: t('days.monday') },
@@ -21,14 +23,6 @@ export default function TrainingDays() {
     { key: 'sunday', label: t('days.sunday') }
   ];
 
-  const toggleDay = (day: string) => {
-    setSelectedDays(prev =>
-      prev.includes(day)
-        ? prev.filter(d => d !== day)
-        : [...prev, day]
-    );
-  };
-
   const handleContinue = () => {
     setTrainingDays(selectedDays);
     navigate('/preferences');
@@ -36,31 +30,32 @@ export default function TrainingDays() {
 
   return (
     <PageContainer currentStep={4} totalSteps={7}>
-      <h1 className="text-2xl font-bold text-center mb-6">
-        {t('trainingDays.title')}
-      </h1>
-      <div className="flex flex-wrap gap-2 mb-6">
-        {days.map((day) => (
-          <Chip
-            key={day.key}
-            variant="flat"
-            className="cursor-pointer"
-            color={selectedDays.includes(day.key) ? "primary" : "default"}
-            onClick={() => toggleDay(day.key)}
-          >
-            {day.label}
-          </Chip>
-        ))}
+      <div className="space-y-6">
+        <div className="text-center space-y-2">
+          <h1 className="text-2xl font-bold">
+            {t('trainingDays.title')}
+          </h1>
+          <p className="text-foreground-500">
+            {t('trainingDays.subtitle')}
+          </p>
+        </div>
+
+        <DayGrid
+          days={days}
+          selectedDays={selectedDays}
+          onToggleDay={toggleDay}
+        />
+
+        <Button
+          fullWidth
+          size="lg"
+          color="primary"
+          onClick={handleContinue}
+          isDisabled={selectedDays.length === 0}
+        >
+          {t('common.continue')}
+        </Button>
       </div>
-      <Button
-        fullWidth
-        size="lg"
-        color="primary"
-        onClick={handleContinue}
-        isDisabled={selectedDays.length === 0}
-      >
-        {t('common.continue')}
-      </Button>
     </PageContainer>
   );
 }

@@ -5,12 +5,11 @@ import { useTranslation } from 'react-i18next';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { svg2pdf } from 'svg2pdf.js';
-import html2canvas from 'html2canvas';
-import PageContainer from '../components/PageContainer';
-import LoadingState from '../components/LoadingState';
-import { ApiClient } from '../lib/api';
-import { useFitnessStore } from '../store/fitnessStore';
-import type { Day } from '../types/api';
+import PageContainer from '../components/PageContainer.tsx';
+import LoadingState from '../components/LoadingState.tsx';
+import { ApiClient } from '../lib/api.ts';
+import { useFitnessStore } from '../store/fitnessStore.ts';
+import type { Day } from '../types/api.ts';
 
 interface WorkoutExercise {
   name: string;

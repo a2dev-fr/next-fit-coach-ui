@@ -2,7 +2,10 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "login": "Login"
+    "login": "Login",
+    "account": "My Account",
+    "settings": "Settings",
+    "signOut": "Sign Out"
   },
   "welcome": {
     "title": "Your next fitness coach",
@@ -19,6 +22,98 @@
     "why": {
       "title": "Why Choose Us",
       "description": "Our AI-powered platform creates custom workout plans that evolve with you. Get the benefits of a personal trainer with the convenience of a mobile app."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "signIn": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "success": "Successfully logged in"
+    },
+    "signup": {
+      "title": "Create Account",
+      "subtitle": "Join NextFit Coach today",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Choose a password",
+      "createAccount": "Create Account",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "success": "Account created successfully",
+      "passwordStrength": {
+        "title": "Password strength",
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong"
+      }
+    },
+    "signOut": {
+      "success": "Successfully signed out",
+      "error": "Error signing out"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "emailTaken": "This email is already registered",
+      "weakPassword": "Password is too weak",
+      "networkError": "Network error. Please check your connection",
+      "serverError": "Server error. Please try again later",
+      "sessionExpired": "Your session has expired. Please sign in again",
+      "unknown": "An unexpected error occurred"
+    }
+  },
+  "account": {
+    "title": "Account Settings",
+    "profile": {
+      "title": "Profile Information",
+      "email": "Email Address",
+      "name": "Full Name",
+      "updated": "Profile updated successfully"
+    },
+    "data": {
+      "title": "Account Data",
+      "download": "Download My Data",
+      "downloaded": "Your data has been downloaded",
+      "delete": "Delete Account",
+      "deleteConfirm": {
+        "title": "Delete Account?",
+        "message": "This action cannot be undone. All your data will be permanently deleted.",
+        "confirm": "Yes, Delete My Account",
+        "success": "Your account has been deleted"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "notifications": {
+        "title": "Email Notifications",
+        "description": "Receive email updates about your workouts"
+      },
+      "language": {
+        "title": "Language",
+        "description": "Choose your preferred language"
+      },
+      "theme": {
+        "title": "Theme",
+        "description": "Choose your preferred theme",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "credits": {
+        "title": "Credit Balance",
+        "remaining": "credits remaining",
+        "empty": "You have no credits left. Purchase more to continue using premium features.",
+        "error": "Unable to load credit balance"
+      }
     }
   },
   "gender": {
@@ -43,15 +138,22 @@
     "kg": "kg"
   },
   "trainingDays": {
-    "title": "Which days would you like to train?"
+    "title": "Which days would you like to train?",
+    "subtitle": "Select the days that best fit your schedule"
   },
   "days": {
     "monday": "Monday",
+    "lundi": "Monday",
     "tuesday": "Tuesday",
+    "mardi": "Tuesday",
     "wednesday": "Wednesday",
+    "mercredi": "Wednesday",
     "thursday": "Thursday",
+    "jeudi": "Thursday",
     "friday": "Friday",
+    "vendredi": "Friday",
     "saturday": "Saturday",
+    "samedi": "Saturday",
     "sunday": "Sunday"
   },
   "preferences": {
@@ -107,22 +209,19 @@
       "advice": "Advice"
     }
   },
-  "login": {
-    "title": "Welcome Back",
-    "subtitle": "Please sign in to your account",
-    "email": "Email",
-    "password": "Password",
-    "rememberMe": "Remember me",
-    "forgotPassword": "Forgot password?",
-    "signIn": "Sign In",
-    "noAccount": "Don't have an account?",
-    "signUp": "Sign up"
-  },
   "common": {
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "download": "Download",
+    "loading": "Loading...",
     "continue": "Continue",
     "back": "Back",
     "edit": "Edit",
-    "save": "Save",
-    "step": "Step"
+    "step": "Step",
+    "success": "Success",
+    "error": "Error",
+    "confirm": "Confirm",
+    "or": "or"
   }
 }

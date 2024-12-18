@@ -1,22 +1,27 @@
-import { CreateWeekPlanRequest, CreateWeekPlanResponse } from '../types/api';
+import { createClient } from "@supabase/supabase-js";
+import { CreateWeekPlanRequest, CreateWeekPlanResponse } from "../types/api";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export class ApiClient {
-  static async createWeekPlan(request: CreateWeekPlanRequest): Promise<CreateWeekPlanResponse> {
-    const response = await fetch(`${API_URL}/create-week-plan`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(request),
+  static async createWeekPlan(
+    request: CreateWeekPlanRequest,
+  ): Promise<CreateWeekPlanResponse> {
+    const { data, error } = await supabase.functions.invoke("create_week_plan", {
+      body: request,
     });
 
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.detail?.[0]?.msg || 'Failed to create workout plan');
+    if (error) {
+      throw new Error(error.message || "Failed to create workout plan");
     }
 
-    return response.json();
+    if (!data) {
+      throw new Error("No data received from the server");
+    }
+
+    return data as CreateWeekPlanResponse;
   }
 }

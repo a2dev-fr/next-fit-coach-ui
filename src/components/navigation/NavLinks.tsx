@@ -2,10 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from '@nextui-org/react';
 import { useTranslation } from 'react-i18next';
+import { useAuthStore } from '../../store/authStore';
 import LanguageSwitcher from '../LanguageSwitcher';
+import UserMenu from './UserMenu';
 
 export default function NavLinks() {
   const { t } = useTranslation();
+  const { user } = useAuthStore();
 
   return (
     <div className="flex items-center space-x-2 md:space-x-4">
@@ -29,17 +32,23 @@ export default function NavLinks() {
       >
         {t('navigation.about')}
       </NavLink>
-      <Button
-        as={NavLink}
-        to="/login"
-        variant="flat"
-        color="primary"
-        size="sm"
-        className="ml-2 md:ml-4 text-sm md:text-base"
-      >
-        {t('navigation.login')}
-      </Button>
+      
       <LanguageSwitcher />
+      
+      {user ? (
+        <UserMenu />
+      ) : (
+        <Button
+          as={NavLink}
+          to="/login"
+          variant="light"
+          color="primary"
+          size="sm"
+          className="ml-2 md:ml-4 text-sm md:text-base"
+        >
+          {t('navigation.login')}
+        </Button>
+      )}
     </div>
   );
 }

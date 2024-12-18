@@ -15,10 +15,10 @@ export default function PageContainer({
   showBack = true 
 }: PageContainerProps) {
   return (
-    <div className="flex flex-col items-center py-6 px-4 relative">
+    <div className="flex flex-col items-center py-3 sm:py-6 px-3 sm:px-4 relative">
       {/* Stepper Navigation */}
       {currentStep && totalSteps && (
-        <div className="w-full max-w-2xl mb-6">
+        <div className="w-full max-w-2xl mb-4 sm:mb-6">
           <StepperNavigation
             currentStep={currentStep}
             totalSteps={totalSteps}
@@ -28,7 +28,7 @@ export default function PageContainer({
       )}
 
       {/* Main Content */}
-      <div className="w-full max-w-2xl bg-background/60 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+      <div className="w-full max-w-2xl bg-background/60 backdrop-blur-lg rounded-xl p-4 sm:p-6 shadow-lg">
         {children}
       </div>
     </div>

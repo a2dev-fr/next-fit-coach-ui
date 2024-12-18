@@ -2,7 +2,10 @@
   "navigation": {
     "home": "Accueil",
     "about": "À propos",
-    "login": "Connexion"
+    "login": "Connexion",
+    "account": "Mon Compte",
+    "settings": "Paramètres",
+    "signOut": "Déconnexion"
   },
   "welcome": {
     "title": "Votre prochain coach fitness",
@@ -19,6 +22,107 @@
     "why": {
       "title": "Pourquoi Nous Choisir",
       "description": "Notre plateforme alimentée par l'IA crée des programmes d'entraînement personnalisés qui évoluent avec vous. Obtenez les avantages d'un coach personnel avec la commodité d'une application mobile."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenue",
+      "subtitle": "Connectez-vous à votre compte",
+      "email": "Email",
+      "emailPlaceholder": "Entrez votre email",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "rememberMe": "Se souvenir de moi",
+      "forgotPassword": "Mot de passe oublié ?",
+      "signIn": "Se connecter",
+      "noAccount": "Pas encore de compte ?",
+      "signUp": "S'inscrire",
+      "success": "Connexion réussie"
+    },
+    "signup": {
+      "title": "Créer un compte",
+      "subtitle": "Rejoignez NextFit Coach aujourd'hui",
+      "email": "Email",
+      "emailPlaceholder": "Entrez votre email",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "Choisissez un mot de passe",
+      "createAccount": "Créer un compte",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "signIn": "Se connecter",
+      "success": "Compte créé avec succès",
+      "passwordStrength": {
+        "title": "Force du mot de passe",
+        "weak": "Faible",
+        "medium": "Moyen",
+        "strong": "Fort"
+      },
+      "or": "ou",
+      "continueWithGoogle": "Se connecter avec Google",
+      "continueWithFacebook": "Se connecter avec Facebook",
+      "terms": {
+        "agreement": "En vous inscrivant, vous acceptez les",
+        "terms": "conditions d'utilisation",
+        "and": "et",
+        "privacy": "la politique de confidentialité"
+      }
+    },
+    "signOut": {
+      "success": "Déconnexion réussie",
+      "error": "Erreur lors de la déconnexion"
+    },
+    "errors": {
+      "invalidCredentials": "Email ou mot de passe invalide",
+      "emailTaken": "Cet email est déjà enregistré",
+      "weakPassword": "Le mot de passe est trop faible",
+      "networkError": "Erreur réseau. Veuillez vérifier votre connexion",
+      "serverError": "Erreur serveur. Veuillez réessayer plus tard",
+      "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter",
+      "unknown": "Une erreur inattendue s'est produite"
+    }
+  },
+  "account": {
+    "title": "Paramètres du compte",
+    "profile": {
+      "title": "Informations du profil",
+      "email": "Adresse email",
+      "name": "Nom complet",
+      "updated": "Profil mis à jour avec succès"
+    },
+    "data": {
+      "title": "Données du compte",
+      "download": "Télécharger mes données",
+      "downloaded": "Vos données ont été téléchargées",
+      "delete": "Supprimer le compte",
+      "deleteConfirm": {
+        "title": "Supprimer le compte ?",
+        "message": "Cette action ne peut pas être annulée. Toutes vos données seront définitivement supprimées.",
+        "confirm": "Oui, supprimer mon compte",
+        "success": "Votre compte a été supprimé"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "notifications": {
+        "title": "Notifications par email",
+        "description": "Recevoir des mises à jour par email sur vos entraînements"
+      },
+      "language": {
+        "title": "Langue",
+        "description": "Choisissez votre langue préférée"
+      },
+      "theme": {
+        "title": "Thème",
+        "description": "Choisissez votre thème préféré",
+        "light": "Clair",
+        "dark": "Sombre",
+        "system": "Système"
+      },
+      "credits": {
+        "title": "Solde de Crédits",
+        "remaining": "crédits restants",
+        "empty": "Vous n'avez plus de crédits. Achetez-en pour continuer à utiliser les fonctionnalités premium.",
+        "error": "Impossible de charger le solde des crédits"
+      }
     }
   },
   "gender": {
@@ -43,23 +147,24 @@
     "kg": "kg"
   },
   "trainingDays": {
-    "title": "Quels jours souhaitez-vous vous entraîner ?"
+    "title": "Quels jours souhaitez-vous vous entraîner ?",
+    "subtitle": "Sélectionnez les jours qui correspondent le mieux à votre emploi du temps"
   },
   "days": {
-    "lundi": "Lundi",
-    "mardi": "Mardi",
-    "mercredi": "Mercredi",
-    "jeudi": "Jeudi",
-    "vendredi": "Vendredi",
-    "samedi": "Samedi",
-    "dimanche": "Dimanche",
     "monday": "Lundi",
+    "lundi" : "Lundi",
     "tuesday": "Mardi",
+    "mardi" : "Mardi",
     "wednesday": "Mercredi",
+    "mercredi" : "Mercredi",
     "thursday": "Jeudi",
+    "jeudi" : "Jeudi",
     "friday": "Vendredi",
+    "vendredi" : "Vendredi",
     "saturday": "Samedi",
-    "sunday": "Dimanche"
+    "samedi" : "Samedi",
+    "sunday": "Dimanche",
+    "dimanche" : "Dimanche"
   },
   "preferences": {
     "title": "Vos préférences et objectifs",
@@ -114,22 +219,19 @@
       "advice": "Conseil"
     }
   },
-  "login": {
-    "title": "Bienvenue",
-    "subtitle": "Connectez-vous à votre compte",
-    "email": "Email",
-    "password": "Mot de passe",
-    "rememberMe": "Se souvenir de moi",
-    "forgotPassword": "Mot de passe oublié ?",
-    "signIn": "Se connecter",
-    "noAccount": "Pas encore de compte ?",
-    "signUp": "S'inscrire"
-  },
   "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "download": "Télécharger",
+    "loading": "Chargement...",
     "continue": "Continuer",
     "back": "Retour",
     "edit": "Modifier",
-    "save": "Enregistrer",
-    "step": "Étape"
+    "step": "Étape",
+    "success": "Succès",
+    "error": "Erreur",
+    "confirm": "Confirmer",
+    "or": "ou"
   }
 }
